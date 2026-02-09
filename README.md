@@ -8,7 +8,16 @@
 ● pytest 
 ● Фреймворк для api на выбор (выбран fastapi)
 
+
+
 **Запуск:**
+Добавил pyproject.toml
+теперь можно пойти таким путём:
+- poetry install
+- poetry run uvicorn main:app --reload
+- poetry run pytest
+
+
 Скачивание проекта
 git clone https://github.com/Dokiw/url_reduction.git
 cd url_reduction
@@ -62,6 +71,8 @@ router - service - repo, не мог применить паттерны uow и 
 2. чистота в проекте, можно легко расщирять.
 
 **коммент, затратил на реализацию около 3 часов**
+
+
 
 
 
