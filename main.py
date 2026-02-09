@@ -1,6 +1,7 @@
 from fastapi import FastAPI, Request, Depends
 from starlette.responses import RedirectResponse
 
+from config import logger
 from handlers.depend import get_service
 from handlers.service import ServiceReductionUrl
 
@@ -13,6 +14,7 @@ async def get_url(
         service: ServiceReductionUrl = Depends(get_service)
 ):
     url = service.get_short_url(code)
+    logger.info(f"Shortening URL: {url}")
     return RedirectResponse(url)
 
 
@@ -21,6 +23,7 @@ async def post_url(
         url: str,
         service: ServiceReductionUrl = Depends(get_service)
 ):
+    logger.info(f"Shortening URL: {url}")
     return service.create_short_url(url)
 
 
